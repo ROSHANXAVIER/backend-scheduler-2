@@ -24,10 +24,7 @@ mongoose.connect('mongodb+srv://roshanxavier24:roshxavier@cluster0.1rjoo.mongodb
 //email
 let nodemailer = require('nodemailer');
 
-hello();
- async function hello (){
-    const resultz=await s1.findOneAndDelete({date:{$lt:Date.now()}});
-    console.log(resultz)}
+
 n();
 async function n(){
     
@@ -38,14 +35,14 @@ async function n(){
         var end = new Date();
         end.setHours(23,59,59,999);
         const results=await s1.find({date:{$gte: start, $lt: end}});
-               
+          console.log(results);     
            
         
         results.map(each=>{console.log(each)
         const froms='u2004061@rajagiri.edu.in';
         const tos='rxgody@gmail.com'
         const frps='roshXAVIER01+';
-        const subs=each.title+"(TODAYS SCHEDULE BY SCHEDULER)";
+        const subs=each.title+" (TODAYS SCHEDULE BY SCHEDULER)";
         const tes=each.body;
         const nodemailer = require('nodemailer');
     let mailOptions = {
@@ -63,7 +60,7 @@ async function n(){
     });
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
-              console.log(error);
+              console.log("this"+error);
             } else {
               console.log('Email sent');
             }
