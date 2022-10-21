@@ -34,7 +34,7 @@ async function n(){
     
         var end = new Date();
         end.setHours(23,59,59,999);
-        const results=await s1.find({date:{$gte: start, $lt: end}});
+        const results=await s1.find({date:{$gte: start, $lt: end},user:"6352eb27ccd381b7eb0bb8f6"});
           console.log(results);     
            
         
